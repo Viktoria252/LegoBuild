@@ -1,11 +1,12 @@
-{% extends "base.html" %}
+{%extends "base.html"%}
+{% block title %} {{blog.title}} {% endblock%}
 
-{% block title %} {{ blog.title }} {% endblock %}
-
-{% block content %}
+{%block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <div class="video">
+        <h3>{{blog.title}}</h3>
         <video controls="controls">
-            <source src="{{ blog.video }}">
+            <source src="{{blog.video}}">
         </video>
     </div>
 {% endblock %}
